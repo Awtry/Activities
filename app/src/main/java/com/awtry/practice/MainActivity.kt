@@ -86,6 +86,8 @@ class MainActivity : AppCompatActivity() {
                 putExtra("No_Foto", centinela)
             })
         }
+
+
     }
 
 }

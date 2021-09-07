@@ -23,7 +23,7 @@
             android:layout_height="50dp"
             app:flow_verticalAlign="center"
 
-            android:background="@android:drawable/arrow_down_float"
+            android:background="@drawable/ic__49_left_arrow_8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/IMG_PRINCIPAL"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -47,7 +47,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
 
-            android:background="@android:drawable/arrow_up_float"
+            android:background="@drawable/ic__33_right_arrow_8"
             app:layout_constraintStart_toEndOf="@id/IMG_PRINCIPAL"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -56,9 +56,9 @@
 
         <Button
             android:id="@+id/btnAl_Detalle"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:text="@string/vamonos"
             app:layout_constraintTop_toBottomOf="@id/IMG_PRINCIPAL"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

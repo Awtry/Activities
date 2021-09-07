@@ -14,6 +14,7 @@ class Detalle : AppCompatActivity() {
 
     private lateinit var Le_Foto: INFO_FOTO
     private var No_Foto: Int = 0
+    private var Mi_Fav: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +22,7 @@ class Detalle : AppCompatActivity() {
 
         Le_Foto = intent.getParcelableExtra("Mi_Fotito") ?: INFO_FOTO()
         No_Foto = intent.getIntExtra("No_Foto", 0)
+        Mi_Fav = Le_Foto.Mi_favorito
 
         initviews()
         Disparador_Boton_Detalle()
@@ -28,9 +30,8 @@ class Detalle : AppCompatActivity() {
 
     //region iniciador
 
-    private lateinit var ViewDetalle: ConstraintLayout
     private lateinit var txtDetalle: TextView
-    private lateinit var btnFAV: ImageButton
+    private lateinit var btnFAV: ImageView
     private lateinit var IMG_Detalle: ImageView
 
     //endregion
@@ -39,7 +40,6 @@ class Detalle : AppCompatActivity() {
 
 
     private fun initviews(){
-        ViewDetalle = findViewById(R.id.Detalle_View)
         IMG_Detalle = findViewById(R.id.IMG_DETALLE)
         btnFAV = findViewById(R.id.btn_favorito)
         txtDetalle = findViewById(R.id.txv_Detalle)
@@ -47,6 +47,12 @@ class Detalle : AppCompatActivity() {
         //Muestra imagen viajera
         IMG_Detalle.setImageResource(Le_Foto.img)
         txtDetalle.setText(Le_Foto.descripcion.text)
+
+        if (!Mi_Fav){
+            btnFAV.setImageResource(R.drawable.ic_star_2)
+        }else{
+            btnFAV.setImageResource(R.drawable.ic_star_8)
+        }
     }
 
     private fun Disparador_Boton_Detalle(){
@@ -55,6 +61,17 @@ class Detalle : AppCompatActivity() {
                 putExtra("Foto_Final", Le_Foto)
 
             })
+        }
+
+        btnFAV.setOnClickListener{
+            Mi_Fav = !Mi_Fav
+            //Le_Foto.Es_Favorito(No_Foto,Mi_Fav)
+            INFO_FOTO().Es_Favorito(No_Foto,Mi_Fav)
+            if (!Mi_Fav){
+                btnFAV.setImageResource(R.drawable.ic_star_2)
+            }else{
+                btnFAV.setImageResource(R.drawable.ic_star_8)
+            }
         }
     }
 }
