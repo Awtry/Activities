@@ -29,4 +29,9 @@ class INFO_FOTO(
 
         )
     }
+
+    fun ConteoTotal() = Photos
+
+
+
 }

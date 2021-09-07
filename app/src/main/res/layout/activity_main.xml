@@ -23,6 +23,7 @@
             android:layout_height="50dp"
             app:flow_verticalAlign="center"
 
+            android:background="@android:drawable/arrow_down_float"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/IMG_PRINCIPAL"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -46,6 +47,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
 
+            android:background="@android:drawable/arrow_up_float"
             app:layout_constraintStart_toEndOf="@id/IMG_PRINCIPAL"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
