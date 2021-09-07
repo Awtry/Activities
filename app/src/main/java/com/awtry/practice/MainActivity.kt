@@ -7,10 +7,15 @@ import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 
+    private lateinit var le_foto: Fotografia
+
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        initviews()
     }
 
     //region iniciador
@@ -35,5 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         IMG_Principal = findViewById(R.id.IMG_PRINCIPAL)
     }
+
+
 
 }
