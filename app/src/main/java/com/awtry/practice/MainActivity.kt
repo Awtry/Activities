@@ -8,11 +8,15 @@ import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 
+
+
+class MainActivity : AppCompatActivity() {
+
     //private lateinit var le_foto: Fotografia
     private lateinit var Le_Foto: INFO_FOTO
     private var centinela = 1
 
-class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -79,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         btnDetalle.setOnClickListener{
             startActivity(Intent(this, Detalle::class.java).apply{
                 putExtra("Mi_Fotito", mis_imagenes[centinela])
-                putExtra("No.Foto", centinela)
+                putExtra("No_Foto", centinela)
             })
         }
     }
