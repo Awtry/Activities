@@ -24,6 +24,8 @@ class Detalle : AppCompatActivity() {
         No_Foto = intent.getIntExtra("No_Foto", 0)
         Mi_Fav = Le_Foto.Mi_favorito
 
+
+
         initviews()
         Disparador_Boton_Detalle()
     }
@@ -43,6 +45,8 @@ class Detalle : AppCompatActivity() {
         IMG_Detalle = findViewById(R.id.IMG_DETALLE)
         btnFAV = findViewById(R.id.btn_favorito)
         txtDetalle = findViewById(R.id.txv_Detalle)
+
+        btnFAV.setImageResource(R.drawable.ic_star_2)
 
         //Muestra imagen viajera
         IMG_Detalle.setImageResource(Le_Foto.img)

@@ -27,6 +27,9 @@
             android:layout_width="300dp"
             android:layout_height="150dp"
 
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="italic"
+            android:typeface="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/IMG_DETALLE"
@@ -36,9 +39,9 @@
         <ImageView
             android:id="@+id/btn_favorito"
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="100dp"
 
-            android:background="@drawable/ic_star_2"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txv_Detalle"
