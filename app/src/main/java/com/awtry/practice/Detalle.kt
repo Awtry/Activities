@@ -41,12 +41,9 @@ class Detalle : AppCompatActivity() {
         No_Foto = intent.getIntExtra("No_Foto", 0)
         Mi_Fav = Le_Foto.Mi_favorito
 
-
-
-
-
         initviews()
-        Disparador_Boton_Detalle()
+        Mi_Favorito()
+        //if(Le_Foto.Mi_favorito)
     }
 
     override fun onRestart() {
@@ -64,8 +61,8 @@ class Detalle : AppCompatActivity() {
         super.onSaveInstanceState(outState)
     }
 
-    private fun saveUserLikes(FAV: INFO_FOTO? = null){
-        preferences.edit().putString(FAVORITE_USER, moshi.adapter(INFO_FOTO::class.java).toJson(FAV)).apply()
+    private fun saveUserLikes(Le_Foto: INFO_FOTO? = null){
+        preferences.edit().putString(FAVORITE_USER, moshi.adapter(INFO_FOTO::class.java).toJson(Le_Foto)).apply()
     }
 
     private fun Es_Fav() =
@@ -76,6 +73,7 @@ class Detalle : AppCompatActivity() {
                 INFO_FOTO()
             }
         } ?: INFO_FOTO()
+
 
     //region iniciador
 
@@ -99,12 +97,23 @@ class Detalle : AppCompatActivity() {
         IMG_Detalle.setImageResource(Le_Foto.img)
         txtDetalle.setText(Le_Foto.descripcion.text)
 
+        Mi_Favorito()
+        Disparador_Boton_Detalle()
+    }
+
+
+    private fun Mi_Favorito(){
+        Mi_Fav = !Mi_Fav
+        //Le_Foto.Es_Favorito(No_Foto,Mi_Fav)
+        saveUserLikes(INFO_FOTO())
         if (!Mi_Fav){
             btnFAV.setImageResource(R.drawable.ic_star_2)
         }else{
             btnFAV.setImageResource(R.drawable.ic_star_8)
         }
     }
+
+
 
     private fun Disparador_Boton_Detalle(){
         IMG_Detalle.setOnClickListener{
@@ -115,14 +124,7 @@ class Detalle : AppCompatActivity() {
         }
 
         btnFAV.setOnClickListener{
-            Mi_Fav = !Mi_Fav
-            //Le_Foto.Es_Favorito(No_Foto,Mi_Fav)
-            INFO_FOTO().Es_Favorito(No_Foto,Mi_Fav)
-            if (!Mi_Fav){
-                btnFAV.setImageResource(R.drawable.ic_star_2)
-            }else{
-                btnFAV.setImageResource(R.drawable.ic_star_8)
-            }
+           Mi_Favorito()
         }
     }
 }
