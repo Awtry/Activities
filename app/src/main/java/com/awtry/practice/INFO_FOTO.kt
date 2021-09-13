@@ -31,8 +31,8 @@ class INFO_FOTO(
         )
     }
 
-    fun Es_Favorito(data: Int, Fav: Boolean){
-        Photos[data].Mi_favorito = Fav
+    fun Es_Favorito(data: Int, My_Favorite: Boolean){
+        Photos[data].Mi_favorito = My_Favorite
     }
 
     fun ConteoTotal() = Photos

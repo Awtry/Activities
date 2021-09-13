@@ -14,8 +14,6 @@ class Full_Foto : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_full_foto)
 
-        Le_Foto = intent.getParcelableExtra("Foto_Final") ?: INFO_FOTO()
-
         initview()
     }
 
@@ -24,6 +22,7 @@ class Full_Foto : AppCompatActivity() {
     private lateinit var IMG_Full: ImageView
 
     private fun initview(){
+        Le_Foto = intent.getParcelableExtra("Foto_Final") ?: INFO_FOTO()
         IMG_Full = findViewById(R.id.IMG_FULL)
         IMG_Full.setImageResource(Le_Foto.img)
     }
